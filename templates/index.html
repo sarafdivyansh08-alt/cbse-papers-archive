@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Class 12 Papers Archive | Past 10 Years Question Papers</title>
+    <meta name="description" content="Download CBSE Class 12 previous year question papers from 2015-2024 for Accountancy, Business Studies, Economics, Data Science, Mathematics, and English.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-journal-bookmark-fill me-2"></i>CBSE Papers Archive
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#papers">Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subjects">Subjects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-gradient-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="bi bi-mortarboard-fill me-3"></i>CBSE Class 12 Question Papers
+                    </h1>
+                    <p class="lead mb-4">
+                        Access past 10 years (2015-2024) question papers across all sets and regions for 
+                        Accountancy, Business Studies, Economics, Data Science, Mathematics, and English.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <span class="badge bg-light text-primary fs-6 px-3 py-2">
+                            <i class="bi bi-file-earmark-pdf me-1"></i>PDF Downloads
+                        </span>
+                        <span class="badge bg-light text-primary fs-6 px-3 py-2">
+                            <i class="bi bi-collection me-1"></i>All Sets & Regions
+                        </span>
+                        <span class="badge bg-light text-primary fs-6 px-3 py-2">
+                            <i class="bi bi-file-zip me-1"></i>Bulk Download
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                    <div class="stats-card bg-white text-dark rounded-4 p-4 shadow">
+                        <div class="row text-center">
+                            <div class="col-6 border-end">
+                                <h2 class="fw-bold text-primary mb-0" id="totalPapers">0</h2>
+                                <small class="text-muted">Total Papers</small>
+                            </div>
+                            <div class="col-6">
+                                <h2 class="fw-bold text-primary mb-0">6</h2>
+                                <small class="text-muted">Subjects</small>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row text-center">
+                            <div class="col-6 border-end">
+                                <h2 class="fw-bold text-primary mb-0">10</h2>
+                                <small class="text-muted">Years</small>
+                            </div>
+                            <div class="col-6">
+                                <h2 class="fw-bold text-primary mb-0">4</h2>
+                                <small class="text-muted">Regions</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section py-4 bg-light sticky-filters" id="papers">
+        <div class="container">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-book me-1"></i>Subject
+                            </label>
+                            <select class="form-select" id="subjectFilter">
+                                <option value="">All Subjects</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-calendar me-1"></i>Year
+                            </label>
+                            <select class="form-select" id="yearFilter">
+                                <option value="">All Years</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-geo-alt me-1"></i>Region
+                            </label>
+                            <select class="form-select" id="regionFilter">
+                                <option value="">All Regions</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-file-text me-1"></i>Type
+                            </label>
+                            <select class="form-select" id="typeFilter">
+                                <option value="">All Types</option>
+                                <option value="question_paper">Question Papers</option>
+                                <option value="marking_scheme">Marking Schemes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-search me-1"></i>Search
+                            </label>
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search papers...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Actions -->
+    <section class="selection-actions py-3 bg-white border-bottom" id="selectionActions" style="display: none;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-semibold">
+                        <i class="bi bi-check2-square me-2"></i>
+                        <span id="selectedCount">0</span> papers selected
+                    </span>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-secondary btn-sm" id="clearSelection">
+                        <i class="bi bi-x-lg me-1"></i>Clear Selection
+                    </button>
+                    <button class="btn btn-primary btn-sm" id="downloadSelected">
+                        <i class="bi bi-download me-1"></i>Download as ZIP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Papers Grid -->
+    <section class="papers-section py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="mb-0">
+                    <i class="bi bi-file-earmark-text me-2"></i>Question Papers
+                </h3>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary btn-sm" id="selectAll">
+                        <i class="bi bi-check-all me-1"></i>Select All Visible
+                    </button>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-secondary btn-sm active" id="gridView">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="listView">
+                            <i class="bi bi-list-ul"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loading Spinner -->
+            <div class="text-center py-5" id="loadingSpinner">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2 text-muted">Loading papers...</p>
+            </div>
+            
+            <!-- Papers Container -->
+            <div class="row g-4" id="papersContainer">
+                <!-- Papers will be loaded here -->
+            </div>
+            
+            <!-- No Results -->
+            <div class="text-center py-5" id="noResults" style="display: none;">
+                <i class="bi bi-search display-1 text-muted"></i>
+                <h4 class="mt-3">No papers found</h4>
+                <p class="text-muted">Try adjusting your filters or search query.</p>
+            </div>
+            
+            <!-- Pagination -->
+            <nav class="mt-5" id="pagination">
+                <ul class="pagination justify-content-center">
+                    <!-- Pagination will be generated here -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="subjects-section py-5 bg-light" id="subjects">
+        <div class="container">
+            <h3 class="text-center mb-5">
+                <i class="bi bi-book-half me-2"></i>Available Subjects
+            </h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-primary bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-calculator text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Accountancy</h5>
+                            <p class="card-text text-muted small">Financial statements, partnership accounts, company accounts</p>
+                            <button class="btn btn-outline-primary btn-sm" onclick="filterBySubject('accountancy')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-success bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-briefcase text-success"></i>
+                            </div>
+                            <h5 class="card-title">Business Studies</h5>
+                            <p class="card-text text-muted small">Management principles, marketing, business finance</p>
+                            <button class="btn btn-outline-success btn-sm" onclick="filterBySubject('business_studies')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-info bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-graph-up text-info"></i>
+                            </div>
+                            <h5 class="card-title">Economics</h5>
+                            <p class="card-text text-muted small">Microeconomics, macroeconomics, Indian economy</p>
+                            <button class="btn btn-outline-info btn-sm" onclick="filterBySubject('economics')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-warning bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-database text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Data Science</h5>
+                            <p class="card-text text-muted small">Data analysis, Python, statistics, machine learning basics</p>
+                            <button class="btn btn-outline-warning btn-sm" onclick="filterBySubject('data_science')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-danger bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-plus-slash-minus text-danger"></i>
+                            </div>
+                            <h5 class="card-title">Mathematics (Core)</h5>
+                            <p class="card-text text-muted small">Calculus, algebra, vectors, probability, linear programming</p>
+                            <button class="btn btn-outline-danger btn-sm" onclick="filterBySubject('mathematics')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 subject-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="subject-icon bg-secondary bg-opacity-10 rounded-circle mx-auto mb-3">
+                                <i class="bi bi-chat-quote text-secondary"></i>
+                            </div>
+                            <h5 class="card-title">English Core</h5>
+                            <p class="card-text text-muted small">Reading comprehension, writing skills, literature</p>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="filterBySubject('english_core')">
+                                View Papers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-5" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-4">
+                        <i class="bi bi-info-circle me-2"></i>About This Archive
+                    </h3>
+                    <p class="lead text-muted">
+                        This comprehensive archive contains CBSE Class 12 question papers from the past 10 years 
+                        (2015-2024) for commerce and science stream subjects. Papers are available for all sets 
+                        and regions including All India, Delhi, Foreign, and Outside Delhi.
+                    </p>
+                    <div class="row mt-5 g-4">
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <i class="bi bi-download display-4 text-primary mb-3"></i>
+                                <h5>Easy Downloads</h5>
+                                <p class="text-muted small">Download individual papers or select multiple papers for bulk download as ZIP</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <i class="bi bi-filter display-4 text-primary mb-3"></i>
+                                <h5>Smart Filters</h5>
+                                <p class="text-muted small">Filter by subject, year, region, and paper type to find exactly what you need</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <i class="bi bi-check-circle display-4 text-primary mb-3"></i>
+                                <h5>Verified Sources</h5>
+                                <p class="text-muted small">Papers sourced from CBSE official website and verified mirrors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-journal-bookmark-fill me-2"></i>CBSE Papers Archive</h5>
+                    <p class="text-muted small">
+                        A comprehensive collection of CBSE Class 12 previous year question papers.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#papers" class="text-muted">Papers</a></li>
+                        <li><a href="#subjects" class="text-muted">Subjects</a></li>
+                        <li><a href="#about" class="text-muted">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Sources</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://cbse.gov.in" target="_blank" class="text-muted">CBSE Official</a></li>
+                        <li><a href="https://supercop.in" target="_blank" class="text-muted">Supercop</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <p class="text-center text-muted small mb-0">
+                &copy; 2024 CBSE Papers Archive. For educational purposes only.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-download me-2"></i>Download Paper
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="downloadModalContent">
+                        <!-- Content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
