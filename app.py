@@ -42,6 +42,15 @@ CBSE_ZIP_URLS = {
         'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2024/XII/Math.zip',
         'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2024/XII/English_Core.zip',
     },
+        2025: {
+        'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Accountancy.zip',
+        'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Business_Studies.zip',
+        'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Economics.zip',
+        'data_science': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Data_Science.zip',
+        'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Math.zip',
+        'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/English_Core.zip',
+    },
+
     2023: {
         'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2023/XII/Accountancy.zip',
         'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2023/XII/Business_Studies.zip',
@@ -70,6 +79,35 @@ CBSE_ZIP_URLS = {
         'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2020/XII/Math.zip',
         'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2020/XII/English_Core.zip',
     },
+    2018: {
+        'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2018/XII/Accountancy.zip',
+        'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2018/XII/Business_Studies.zip',
+        'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2018/XII/Economics.zip',
+        'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2018/XII/Math.zip',
+        'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2018/XII/English_Core.zip',
+    },
+    2017: {
+        'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2017/XII/Accountancy.zip',
+        'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2017/XII/Business_Studies.zip',
+        'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2017/XII/Economics.zip',
+        'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2017/XII/Math.zip',
+        'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2017/XII/English_Core.zip',
+    },
+    2016: {
+        'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2016/XII/Accountancy.zip',
+        'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2016/XII/Business_Studies.zip',
+        'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2016/XII/Economics.zip',
+        'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2016/XII/Math.zip',
+        'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2016/XII/English_Core.zip',
+    },
+    2015: {
+        'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2015/XII/Accountancy.zip',
+        'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2015/XII/Business_Studies.zip',
+        'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2015/XII/Economics.zip',
+        'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2015/XII/Math.zip',
+        'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2015/XII/English_Core.zip',
+    },
+
     2019: {
         'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2019/XII/Accountancy.zip',
         'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2019/XII/Business_Studies.zip',
