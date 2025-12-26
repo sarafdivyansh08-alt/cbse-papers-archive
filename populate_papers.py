@@ -46,7 +46,7 @@ REGIONS = {
     'outside_delhi': {'display': 'Outside Delhi', 'supercop': 'Outside-Delhi'}
 }
 
-YEARS = list(range(2015, 2025))
+YEARS = list(range(2015, 2026))
 
 # CBSE paper code patterns by subject
 PAPER_CODES = {
