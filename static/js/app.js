@@ -360,6 +360,17 @@ function clearSelection() {
     renderPapers();
 }
 
+// Select all filtered papers (across all pages)
+function selectAllFiltered() {
+  state.filteredPapers.forEach(paper => {
+    state.selectedPapers.add(paper.id);
+  });
+  
+  updateSelectionUI();
+  renderPapers();
+}
+
+
 // Download single paper - direct PDF download
 async function downloadPaper(paperId) {
     try {
@@ -672,3 +683,7 @@ window.togglePaperSelection = togglePaperSelection;
 window.downloadPaper = downloadPaper;
 window.changePage = changePage;
 window.filterBySubject = filterBySubject;
+window.selectAllVisible = selectAllVisible;
+window.selectAllFiltered = selectAllFiltered;
+window.clearSelection = clearSelection;
+window.downloadSelectedPapers = downloadSelectedPapers;
