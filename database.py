@@ -92,7 +92,7 @@ def seed_initial_data():
         ''', (name, code, display_name))
     
     # Years (2015-2024, 10 years)
-    for year in range(2015, 2025):
+    for year in range(2015, 2026):
         cursor.execute('INSERT OR IGNORE INTO years (year) VALUES (?)', (year,))
     
     # Regions
