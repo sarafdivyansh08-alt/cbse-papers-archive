@@ -421,3 +421,12 @@ footer a:hover {
 .toast {
     min-width: 300px;
 }
+
+/* Select element styling for filter dropdowns */
+select {
+  width: 100% !important;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
