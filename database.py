@@ -230,7 +230,25 @@ def get_region_by_name(name):
     conn.close()
     return dict(region) if region else None
 
+def add_missing_years():
+ """Add any missing years to the database"""
+ conn = get_db()
+ cursor = conn.cursor()
+ 
+ # Check which years exist
+ cursor.execute('SELECT year FROM years ORDER BY year')
+ existing_years = set(row['year'] for row in cursor.fetchall())
+ 
+ # Add missing years
+ for year in range(2015, 2026):  # 2015-2025
+ if year not in existing_years:
+ cursor.execute('INSERT INTO years (year) VALUES (?)', (year,))
+ 
+ conn.commit()
+ conn.close()
+
 if __name__ == '__main__':
     init_db()
     seed_initial_data()
+        add_missing_years()
     print("Database initialized and seeded successfully!")
