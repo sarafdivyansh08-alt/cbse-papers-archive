@@ -10,7 +10,7 @@ from flask import Flask, render_template, jsonify, request, send_file, Response,
 from flask_cors import CORS
 from database import (
     init_db, seed_initial_data, get_all_subjects, get_all_years,
-    get_all_regions, get_papers, get_paper_by_id, get_db
+    get_all_regions, get_papers, get_paper_by_id, get_db, add_missing_years
 )
 
 app = Flask(__name__)
@@ -445,6 +445,7 @@ def initialize_app():
     """Initialize the application"""
     init_db()
     seed_initial_data()
+        add_missing_years()
 
 if __name__ == '__main__':
     initialize_app()
