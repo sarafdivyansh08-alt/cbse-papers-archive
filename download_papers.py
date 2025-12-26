@@ -16,6 +16,13 @@ HEADERS = {
 
 # CBSE Official ZIP URLs
 CBSE_URLS = {
+     2025: {
+          'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Accountancy.zip',
+          'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Business_Studies.zip',
+          'economics': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Economics.zip',
+          'mathematics': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/Math.zip',
+          'english_core': 'https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/English_Core.zip',
+          },
     2024: {
         'accountancy': 'https://www.cbse.gov.in/cbsenew/question-paper/2024/XII/Accountancy.zip',
         'business_studies': 'https://www.cbse.gov.in/cbsenew/question-paper/2024/XII/Business_Studies.zip',
@@ -73,7 +80,7 @@ SUBJECT_DISPLAY = {
 def ensure_dirs():
     """Ensure required directories exist"""
     os.makedirs(PAPERS_DIR, exist_ok=True)
-    for year in range(2015, 2025):
+    for year in range(2015, 2026):
         year_dir = os.path.join(PAPERS_DIR, str(year))
         os.makedirs(year_dir, exist_ok=True)
 
